@@ -1,0 +1,18 @@
+type Patient {
+  id: ID!
+  provider: String!
+  createdAt: AWSDateTime!
+}
+
+type Query {
+  getPatients: [Patient]
+}
+
+input PatientInput {
+  provider: String!
+  createdAt: AWSDateTime!
+}
+
+type Mutation {
+  createPatientRecord(patient: PatientInput): Patient
+}
